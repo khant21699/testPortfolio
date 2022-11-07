@@ -1,0 +1,498 @@
+body{
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: black;
+}
+.header{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-image: url(images/949662.png);
+    background-repeat: no-repeat;
+    background-size: 40% 40%;
+    background-position: 80% 50%;
+    padding: 2% 10%;
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 80%;
+    z-index: 10000;
+}
+.hide{
+    display: none;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+nav ul li a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+
+nav ul li a::before{
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    transition: all .5s;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+    height: 8px;
+    border-radius: 10px;
+}
+
+nav ul li a.active::before{
+    width: 100%;
+    height: 8px;
+    border-radius: 10px;
+}
+
+.header-text{
+    padding-top: 15%;
+}
+
+.header-text p{
+    font-size: 20px;
+}
+
+.header-text h1 span{
+    color: red;
+}
+
+#about{
+    background-color: black;
+    overflow: hidden;
+    height: auto;
+    padding-top: 10%;
+}
+
+/* .about .row .hidden{
+    opacity: 0;
+    transform: translateX(-500px);
+    transition: all 1.2s;
+}
+.about .hidden.show{
+    transform: translateX(0);
+    opacity: 1;
+} */
+
+.about .hidden .abt1{
+    transform: rotateZ(350deg);
+    opacity: 0;
+    transition: all 1s ease;
+    height: auto;
+}
+.about .hidden.show .abt1{
+    transform: rotateZ(0deg);
+    opacity: 1;
+}
+
+.about .hidden .abt2{
+    transform: rotateZ(-350deg);
+    opacity: 0;
+    transition: all 1s ease;
+    height: 60vh;
+}
+.about .hidden.show .abt2{
+    transform: rotateZ(0deg);
+    opacity: 1;
+}
+
+.about{
+    padding: 3% 10%;
+    background-color: black;
+    height: auto;
+}
+.about div div img{
+    border-radius: 10%;
+}
+
+.about div{
+    height: auto;
+}
+
+.tab-title{
+    display: flex;
+    /* margin: 20px 0px; */
+}
+.tab-link{
+    position: relative;
+    margin-right: 40px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    color: white;
+    padding-bottom: 10px;
+}
+.tab-link::before{
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    background-color: red;
+    border-radius: 50%;
+    /* left: 50%; */
+    bottom: 0;
+    /* transform: translateX(-50%); */
+    transition: all .5s;
+}
+
+.tab-link:hover::before{
+    width: 50%;
+    height: 8px;
+    border-radius: 10px;
+}
+.tab-link.active::before{
+    width: 50%;
+    height: 8px;
+    border-radius: 10px;
+}
+.tab-content ul{
+    padding: 0;
+}
+.tab-content ul li{
+    list-style: none;
+    padding-bottom: 10px;
+}
+.tab-content ul li span{
+    /* padding-bottom: 10px; */
+    color: red;
+    font-size: 20px;
+}
+.tab-content{
+    position: absolute;
+    /* display: none; */
+    opacity: 0;
+    transform: translateX(500px);
+    transition: all .3s;
+}
+.tab-content.active-link{
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#mywork{
+    background-color: black;
+    height: auto;
+    margin-bottom: 200px;
+}
+
+.rps{
+    height: auto;
+}
+
+#mywork div .hidden{
+    height: auto;
+}
+
+.myworkin{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    padding: 0;
+    border: 2px red solid;
+    border-radius: 5%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.mywork-container{
+    height: 50vh;
+}
+
+.row{
+    width: 100%;
+    justify-content: space-around;
+    overflow: hidden;
+}
+.myworkin img{
+    /* z-index: -1; */
+    /* position: absolute; */
+    width: 400px;
+    height: 400px;
+    left: 0;
+    top: 0;
+    /* z-index: 1000; */
+    
+    
+}
+
+.text-control{
+    /* border: 2px transparent solid; */
+    border-radius: 5%;
+    position: absolute;
+    padding-top: 10%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 400px;
+    height: 400px;
+    color: white;
+    transform: translateY(500px);
+    background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(255,0,0,1));
+    transition: all 1s;
+}
+.text-control .linkcontrol{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    text-align: center;
+}
+.text-control a{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border: 0px;
+    border-radius: 50%;
+}
+.text-control a button{
+    border: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.myworkin:hover .text-control{
+    transform: translate(0);
+}
+
+.row.hidden .myworkin1{
+    transform: translateX(-500%);
+    opacity: 0;
+    transition: all .5s ease;
+}
+.row.hidden .myworkin2{
+    transform: translateY(500%);
+    opacity: 0;
+    transition: all 1s ease;
+}
+.row.hidden .myworkin3{
+    transform: translateX(500%);
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+.row.hidden.show .myworkin1{
+    transform: translateX(0);
+    opacity: 1;
+    /* transition: all .5s; */
+}
+.row.hidden.show .myworkin2{
+    transform: translateY(0);
+    opacity: 1;
+    /* transition: all 1s; */
+}
+.row.hidden.show .myworkin3{
+    transform: translateX(0);
+    opacity: 1;
+    /* transition: all 1.5s; */
+}
+
+#contact{
+    background-color: black;
+    height: auto;
+}
+#contact div{
+    height: 100%;
+}
+#contact div div{
+    height: 100%;
+}
+.contact1{
+    /* width: 40%; */
+    height: 100%;
+    padding-left: 15%;
+    color: white;
+    margin-bottom: 50px;
+}
+.contact1 h1{
+    /* padding-top: 10%; */
+    font-size: 60px;
+    word-wrap: break-word
+}
+.contact1 p{
+    padding-top: 5%;
+    font-size: 25px;
+    word-wrap: break-word
+}
+
+
+.DCV{
+    margin-top: 20px;
+    width: 200px;
+    height: 50px;
+    border: 0px solid;
+    border-radius: 20px;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    transform: scale(1);
+    transition: all .2s;
+}
+.DCV:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75) inset;
+}
+
+.contact2{
+    /* display: flex; */
+    justify-content: center;
+    /* width: 60%; */
+    height: 100%;
+    /* margin-bottom: 10%; */
+}
+.contact2 form{
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact2 form input, .contact2 form textarea{
+    margin-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 15px;
+    outline: none;
+    background-color: #262626;
+    font-size: 20px;
+    color: white;
+    padding-bottom: 10px;
+}
+.submit-BTN{
+    font-size: 20px;
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+    width: 200px;
+    height: 50px;
+    color: white;
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 20px;
+    transform: scale(1);
+    transition: all .2s;
+}
+
+.submit-BTN:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75) inset;
+}
+#footer{
+    margin-top: 50px;
+    background-color:  #262626;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#footer div div p{
+    margin: 0;
+}
+
+#footer div div p i{
+    color: red;
+}
+
+#contact div .hidden .contact1{
+    transform: translateX(-500px);
+    opacity: 0;
+    transition: all .5s ease;
+}
+#contact div .hidden .contact2{
+    transform: translateX(500px);
+    opacity: 0;
+    transition: all .5s ease;
+}
+#contact div .hidden.show .contact1{
+    transform: translateX(0);
+    opacity: 1;
+    transition: all .5s ease;
+}
+#contact div .hidden.show .contact2{
+    transform: translateX(0);
+    opacity: 1;
+    transition: all .5s ease;
+}
+
+/* css for responsive */
+@media only screen and (max-width: 600px){
+    .header{
+        padding: 0;
+    }
+    /* nav{
+        width: 100%;
+    } */
+    nav h1{
+        padding-top: 0;
+        left: 55%;
+        position: absolute;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: -0;
+        transform: translateX(800%) translateY(-6%);
+        height: 100vh;
+        width: 20vh;
+        background-color: red;
+        transition: all .5s ease;
+    }
+    .hide{
+        display: block;
+        /* text-align: right; */
+        padding-left: 25%;
+        font-size: 20px;
+    }
+
+    nav ul.active{
+        transform: translateX(80%) translateY(-6%);
+    }
+    nav p{
+        position: absolute;
+        color: white;
+        font-size: 30px;
+        right: 0;
+        top: 0;
+        transform: translateX(250%) translateY(-60%);
+    }
+
+    .header-text{
+        padding-top: 60%;
+        padding-left: 10%;
+    }
+}
